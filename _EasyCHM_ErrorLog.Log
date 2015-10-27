@@ -1,13 +1,54 @@
 Microsoft HTML Help Compiler 4.74.8702
 
-Compiling e:\wwwroot\ainiku.CHM
+Compiling e:\wwwroot\help\ainiku\ainiku.CHM
 
+HHC3004: Warning: index.html : The HTML tag "$len; $i++) {        if ($x == $l) $x = 0;    ..." is not a valid HTML tag (it does not begin with an alphanumeric character).
+HHC3004: Warning: index.html : The HTML tag "$result){					return true;					}else{					re..." is not a valid HTML tag (it does not begin with an alphanumeric character).
+HHC3004: Warning: index.html : The HTML tag "$result){unlink($id);}				return true;			}//..." is not a valid HTML tag (it does not begin with an alphanumeric character).
+HHC3004: Warning: index.html : The HTML tag "$result){			return true;			}else{			return f..." is not a valid HTML tag (it does not begin with an alphanumeric character).
+HHC3004: Warning: index.html : The HTML tag ".*?" is not a valid HTML tag (it does not begin with an alphanumeric character).
+HHC3004: Warning: index.html : The HTML tag ")(.*?)(" is not a valid HTML tag (it does not begin with an alphanumeric character).
+HHC3004: Warning: index.html : The HTML tag "=$_Num) break; }                 return $k;   ..." is not a valid HTML tag (it does not begin with an alphanumeric character).
+HHC3004: Warning: index.html : The HTML tag "$len; $i++){	$c = ord($str[$i]);	if ($c " is not a valid HTML tag (it does not begin with an alphanumeric character).
 ainiku\index.html
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#ainiku_decrypt.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#ainiku_encrypt.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#ainiku_ucenter_md5.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#api.
 HHC5003: Error: Compilation failed while compiling ainiku\index.html#auto_login.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#autologin.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#check_dir_iswritable.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#check_verify.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#compress_css.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#compress_js.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#createAccount.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#createFolder.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#createorder.
+ainiku\index.html#data_auth_sign
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#delfile.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#delimage.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#file_ismod.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#filter_html.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#gbkjson_encode.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#get_naps_bot.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#getAccountType.
 HHC5003: Error: Compilation failed while compiling ainiku\index.html#is_login.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#loginout.
+ainiku\index.html#mbstringtoarray
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#msubstr.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#pathA.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#pathR.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#Pinyin.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#removeHtml.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#rm_empty_dir.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#sendMail.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#time_format.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#toUtf8.
+HHC5003: Error: Compilation failed while compiling ainiku\index.html#writetofile.
 TOC-Created-By-Easy-CHM.HHC
 d:\Personal\TEMP\FileTemp\Easy-CHM-HtmlHelp-Maker.HTML
 d:\Personal\TEMP\FileTemp\Easy-CHM-HtmlHelp-Maker.GIF
+ainiku\js\init.js
 ainiku\js\shcode.js
 ainiku\css\index.css
 ainiku\css\css.css
@@ -16,5 +57,35 @@ HHC5013: Error: URL reference in the TOC cannot be resolved: "Easy-CHM-HtmlHelp-
 
 
 The following files were not compiled:
+ainiku\index.html#ainiku_decrypt
+ainiku\index.html#ainiku_encrypt
+ainiku\index.html#ainiku_ucenter_md5
+ainiku\index.html#api
 ainiku\index.html#auto_login
+ainiku\index.html#autologin
+ainiku\index.html#check_dir_iswritable
+ainiku\index.html#check_verify
+ainiku\index.html#compress_css
+ainiku\index.html#compress_js
+ainiku\index.html#createAccount
+ainiku\index.html#createFolder
+ainiku\index.html#createorder
+ainiku\index.html#delfile
+ainiku\index.html#delimage
+ainiku\index.html#file_ismod
+ainiku\index.html#filter_html
+ainiku\index.html#gbkjson_encode
+ainiku\index.html#get_naps_bot
+ainiku\index.html#getAccountType
 ainiku\index.html#is_login
+ainiku\index.html#loginout
+ainiku\index.html#msubstr
+ainiku\index.html#pathA
+ainiku\index.html#pathR
+ainiku\index.html#Pinyin
+ainiku\index.html#removeHtml
+ainiku\index.html#rm_empty_dir
+ainiku\index.html#sendMail
+ainiku\index.html#time_format
+ainiku\index.html#toUtf8
+ainiku\index.html#writetofile
