@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ainiku</title>
+<script src="js/init.js" type="text/javascript"></script>
+<script src="js/shcode.js" type="text/javascript"></script>
+<link href="css/index.css" type="text/css" rel="stylesheet" />
+<link href="css/css.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="function"> 
+<pre class="brush:php;toolbar:false">
+/**
+ * 检测用户是否登录
+ * @return integer 0-未登录，大于0-当前登录用户ID
+ * @author 寞枫 <735579768@.qq.com>
+ */
+function is_login(){
+    $user = session('user_auth');
+    if (empty($user)) {
+        return 0;
+    } else {
+        return session('user_auth_sign') == data_auth_sign($user) ? $user['uid'] : 0;
+    }
+}
+</pre>
+</div>
+<div class="function">
+<pre class="brush:php;toolbar:false">
+/**
+ *前台自动登陆判断
+ */
+ function auto_login(){
+	 	$user=cookie('token');
+		if(empty($user)){session('user_auth',null);return 0;};
+	 	$uid=is_login();
+		if(!$uid)$uid=autologin();
+		return $uid;
+	 }
+</pre>
+</div>
+
+<div class="function">
+ <a name="is_login" class="mark"></a>
+  <pre class="brush:js;toolbar:false">
+    /**
+     * 检测用户是否登录
+     * @return integer 0-未登录，大于0-当前登录用户ID
+     * @author 寞枫 <735579768@.qq.com>
+     */
+    function is_login(){
+        $user = session('user_auth');
+        if (empty($user)) {
+            return 0;
+        } else {
+            return session('user_auth_sign') == data_auth_sign($user) ? $user['uid'] : 0;
+        }
+    }
+ </pre>
+ </div>
+ 
+<div class="function">
+    <a name="auto_login" class="mark"></a>
+    <pre class="brush:js;toolbar:false">
+    /**
+     *前台自动登陆判断
+     */
+     function auto_login(){
+            $user=cookie('token');
+            if(empty($user)){session('user_auth',null);return 0;};
+            $uid=is_login();
+            if(!$uid)$uid=autologin();
+            return $uid;
+         }
+    </pre>
+</div>
+
+<div class="function">
+    <a name="loginout" class="mark"></a>
+    <pre class="brush:js;toolbar:false">
+    /**
+     *前台用户自动登出
+     */
+     function loginout(){
+         session('[destroy]');
+         cookie(null);
+        // cookie('token',null,array('expire'=>time()+(-1000)));
+         }
+    </pre>
+</div>
+
+<div class="function">
+    <a name="autologin" class="mark"></a>
+    <pre class="brush:js;toolbar:false">
+/**
+ *前台用户判断cookie自动登陆
+ */
+ function autologin(){
+	 $user=cookie('token');
+	 if(empty($user)){
+		 return 0;
+		 }else{
+		 $username=ainiku_decrypt($user['u']);
+		 $password=ainiku_ucenter_md5(ainiku_decrypt($user['p']));
+		 $map['uesrname']=$username;
+		 $map['password']=$password;
+		 $info=M('Member')->where($map)->find();
+		 if(empty($info)){
+			 return 0;
+		  }else{
+			/* 记录登录SESSION和COOKIES */
+			$auth = array(
+				'uid'             => $info['member_id'],
+				'username'        => $info['username'],
+				'last_login_time' => $info['last_login_time'],
+			);
+			session('user_auth', $auth);
+			session('uinfo',$info);
+			session('user_auth_sign', data_auth_sign($auth));
+			define('UID',$info['member_id']);
+			
+			$uid=$info['member_id'];
+			$ip=get_client_ip();
+			$location=getIpLocation($ip);
+			$data = array(
+				'member_id'              => $uid,
+				'update_time' => NOW_TIME,
+				'last_login_ip'   =>$ip ,
+				'last_login_adr'  =>$location['country'].$location['area']
+			);
+			M('Member')->where("member_id=$uid")->setInc('login');
+			M('Member')->save($data);
+			//保存用户登陆日志
+			M('MemberLog')->add(
+			array(
+					'member_id'=>$uid,
+					'ip'=>$Ip,
+					'adr'=>$location['country'].$location['area'],
+					'create_time'=>NOW_TIME
+					)
+			);
+			return $uid;
+			 
+				 }			 
+	}
+
+	 }
+    </pre>
+</div>
+
+<div class="function">
+    <a name="check_verify" class="mark"></a>
+    <pre class="brush:js;toolbar:false">
+        /**
+         * 检测验证码
+         * @param  integer $id 验证码ID
+         * @return boolean     检测结果
+         * @author 寞枫 <735579768@.qq.com>
+         */
+        function check_verify($code, $id = 1){
+            $verify = new \Think\Verify();
+            return $verify->check($code, $id);
+        }
+    </pre>
+</div>
+</body>
+</html>
