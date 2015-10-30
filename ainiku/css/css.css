@@ -6,10 +6,51 @@ a{color:#666;transition:all .3s;-webkit-transition:all .3s;-moz-transition:all .
 a:hover{color:#000;}
 .function:after{ display:block; clear:both; content:''; height:0px;}
 .mark{ display:block; height:10px; clear:both;}
-.left{ width:250px; float:left; height:100%; position:fixed; top:0px; left:0px; overflow:auto;}
-.right{ display:block; margin-left:270px;}
+.left{ width:250px; float:left; height:100%; position:fixed; top:0px; left:0px; overflow:hidden; }
+.left .list{overflow:auto;height:100%;}
+.right{ display:block;margin-left:270px;}
 .left dl dt a,
 .left dl dd a{ display:block;padding-left:10px; height:30px; line-height:30px;}
+.left dl dd{ display:none;}
 .left dl dd a{padding-left:40px;}
 .left dl dd a.hover,
 .left dl dd a:hover{background:#ededed;}
+
+.search{border: solid 1px #ccc;    margin: 10px 0px 10px 10px;}
+.search .searinput{ outline:none; width:150px; height:30px; line-height:30px;    display: inline-block;padding: 0px 10px;
+    border: none;}
+.search .searinput:active,
+.search .searinput:hover,
+.search .searinput:focus{ border:none;}
+.search .searbtn{ height:30px; line-height:30px; padding:0px 10px;}
+
+/*---滚动条默认显示样式--*/  
+::-webkit-scrollbar-thumb{  
+   background-color:#018EE8;  
+	 background: rgba(0,0,0,.3);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+}  
+ 
+/*---鼠标点击滚动条显示样式--*/  
+::-webkit-scrollbar-thumb:hover{  
+   background: rgba(0,0,0,.5);
+   height:50px;  
+   -webkit-border-radius:4px;  
+}  
+ 
+/*---滚动条大小--*/  
+::-webkit-scrollbar{  
+   width:8px;  
+   height:8px;  
+}  
+ 
+/*---滚动框背景样式--*/  
+::-webkit-scrollbar-track-piece{  
+   background-color:#fff;  
+   -webkit-border-radius:0;  
+}
+

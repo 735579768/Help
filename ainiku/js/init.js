@@ -23,4 +23,7 @@ right.find('.function').each(function(index, element) {
 	leftdl.append(str);
 	
 });
+window.divshow=function(obj){
+	$(obj).parents('dl').find('dd').toggle();
+	};
 });
