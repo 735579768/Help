@@ -12,3 +12,15 @@
 ////str=str.replace(match[1],divstr);
 ////autocode.innerHTML=str;
 //};
+$(function(){
+var left=$('#leftdir');
+var leftdl=$('#leftdir dl');
+var right=$('#rightdir');
+right.find('.function').each(function(index, element) {
+    var ch=$(this).children().eq(0);
+	var name=ch.attr('name');
+	var str='<dd><a href="#'+name+'">'+name+'</a></dd>';
+	leftdl.append(str);
+	
+});
+});
